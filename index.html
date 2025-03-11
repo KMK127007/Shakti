@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Learning Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Smart Learning Hub</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#interactive-lesson">Lessons</a></li>
+                <li><a href="#learning-path">Learning Path</a></li>
+                <li><a href="#progress">Progress</a></li>
+                <li><a href="#quiz-section">Quiz</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home">
+            <h2>Welcome to Smart Learning Hub</h2>
+            <p>Your personalized AI-powered learning assistant.</p>
+            <div class="features">
+                <div class="feature">
+                    <h3>📖 Interactive Lessons</h3>
+                    <p>Engaging and adaptive lessons based on your learning style.</p>
+                </div>
+                <div class="feature">
+                    <h3>📊 Track Your Progress</h3>
+                    <p>Monitor your achievements and stay motivated.</p>
+                </div>
+                <div class="feature">
+                    <h3>🧠 AI-Powered Quizzes</h3>
+                    <p>Test your knowledge with dynamic quizzes.</p>
+                </div>
+            </div>
+            <button onclick="startLesson()">Start Learning</button>
+        </section>
+
+        <!-- Lessons Section -->
+        <section id="interactive-lesson" style="display:none;">
+            <h2>Interactive Lesson</h2>
+            <p id="lesson-content">Explore engaging content tailored for you!</p>
+            <button onclick="startLesson()">Start Lesson</button>
+        </section>
+
+        <!-- Learning Path Section -->
+        <section id="learning-path" style="display:none;">
+            <h2>Your Custom Learning Path</h2>
+            <p id="recommendation"></p>
+        </section>
+
+        <!-- Progress Section -->
+        <section id="progress" style="display:none;">
+            <h2>Your Progress</h2>
+            <p>Track your learning journey and achievements.</p>
+            <progress value="0" max="100" id="progress-bar"></progress>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz-section" style="display:none;">
+            <h2>Quiz Time</h2>
+            <p id="quiz-question"></p>
+            <div id="quiz-options"></div>
+            <p id="quiz-feedback"></p>
+            <button id="start-quiz">Start Quiz</button>
+        </section>
+    </main>
+    <script src="script.js"></script>
+    <script src="https://cdn.jotfor.ms/s/umd/latest/for-embedded-agent.js"></script>
+<script>
+  window.addEventListener("DOMContentLoaded", function() {
+    window.AgentInitializer.init({
+      rootId: "JotformAgent-01952be521607fc6a2bfd57dc32d767d9ae3",
+      formID: "01952be521607fc6a2bfd57dc32d767d9ae3",
+      queryParams: ["skipWelcome=1", "maximizable=1"],
+      domain: "https:\/\/www.jotform.com",
+      isInitialOpen: false,
+      isDraggable: false,
+      background: "linear-gradient(180deg, #C8CEED 0%, #C8CEED 100%)",
+      buttonBackgroundColor: "#0a1551",
+      buttonIconColor: "#fff",
+      variant: false,
+      customizations: {
+        greeting: "Yes",
+        greetingMessage: "Hi! How can I assist you?",
+        pulse: "Yes",
+        position: "right"
+      }
+    });
+  });
+</script>
+</body>
+</html>
